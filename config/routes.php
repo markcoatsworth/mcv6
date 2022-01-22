@@ -55,7 +55,8 @@ return static function (RouteBuilder $routes) {
         $builder->connect('/about', ['controller' => 'Pages', 'action' => 'about']);
         $builder->connect('/cv', ['controller' => 'Pages', 'action' => 'cv']);
         $builder->connect('/contact', ['controller' => 'Pages', 'action' => 'contact']);
-        $builder->connect('/contact', ['controller' => 'Pages', 'action' => 'contact']);
+        
+        $builder->connect('/admin', ['controller' => 'Pages', 'action' => 'admin']);
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
