@@ -51,12 +51,18 @@ return static function (RouteBuilder $routes) {
          * to use (in this case, templates/Pages/home.php)...
          */
         $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
-        $builder->connect('/photos/{name}', ['controller' => 'Photos', 'action' => 'gallery'])->setPass(['name']);;
+        $builder->connect('/photos/{name}', ['controller' => 'Photos', 'action' => 'gallery'])->setPass(['name']);
         $builder->connect('/about', ['controller' => 'Pages', 'action' => 'about']);
         $builder->connect('/cv', ['controller' => 'Pages', 'action' => 'cv']);
         $builder->connect('/contact', ['controller' => 'Pages', 'action' => 'contact']);
-        
+
+        /*
+         * Admin pages
+         */
         $builder->connect('/admin', ['controller' => 'Pages', 'action' => 'admin']);
+        $builder->connect('/admin/galleries', ['controller' => 'Galleries', 'action' => 'index']);
+        $builder->connect('/admin/photos', ['controller' => 'Photos', 'action' => 'index']);
+        $builder->connect('/admin/users', ['controller' => 'Users', 'action' => 'index']);
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.

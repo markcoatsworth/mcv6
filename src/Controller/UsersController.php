@@ -42,7 +42,7 @@ class UsersController extends AppController
             // redirect to /admin after login success
             $redirect = $this->request->getQuery('redirect', [
                 'controller' => 'Pages',
-                'action' => 'adminIndex',
+                'action' => 'admin',
             ]);
 
             return $this->redirect($redirect);
@@ -75,10 +75,7 @@ class UsersController extends AppController
      */
     public function view($id = null)
     {
-        $user = $this->Users->get($id, [
-            'contain' => ['Articles'],
-        ]);
-
+        $user = $this->Users->get($id);
         $this->set(compact('user'));
     }
 
@@ -117,11 +114,11 @@ class UsersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('This user ('.$user->username.') has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            $this->Flash->error(__('This user ('.$user->username.') could not be saved. Please, try again.'));
         }
         $this->set(compact('user'));
     }
