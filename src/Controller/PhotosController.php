@@ -48,13 +48,43 @@ class PhotosController extends AppController
     {
         $photo = $this->Photos->newEmptyEntity();
         if ($this->request->is('post')) {
-            $photo = $this->Photos->patchEntity($photo, $this->request->getData());
-            if ($this->Photos->save($photo)) {
-                $this->Flash->success(__('The photo '.$photo->title.' has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+            $photoData = $this->request->getData();
+            // Create slug if needed
+            if (!isset($photoData['slug']) || empty($photoData['slug'])) {
+                $photoData['slug'] = strtolower(substr(Text::slug($photoData['title']), 0, 255));    
             }
-            $this->Flash->error(__('The photo '.$photo->title.' could not be saved. Please, try again.'));
+            // Image management
+            $image = $this->request->getData('filename');
+            if ($image != null && $image->getError() != UPLOAD_ERR_NO_FILE) {
+                $imageFile = $image->getClientFilename();
+                $photoData['filename'] = $imageFile;
+
+                // Image upload
+                $fileobject = $this->request->getData('filename');
+                $uploadPath = 'photos/originals/';
+                $destination = $uploadPath.$imageFile;
+                $fileobject->moveTo($destination);
+
+                // Image resizes
+                $manager = new ImageManager(array('driver' => 'imagick'));
+                $displayImage = $manager->make($destination)->widen(1080, function ($constraint) {
+                    $constraint->upsize();
+                });
+                $displayImage->save('photos/'.$imageFile);
+                $tnailImage = $manager->make($destination)->widen(120);
+                $tnailImage->save('photos/tnails/'.$imageFile);
+            }
+            else {
+                $eventData['image'] = "";
+            }
+            $photo = $this->Photos->patchEntity($photo, $photoData);
+            if ($result = $this->Photos->save($photo)) {
+                $this->Flash->success(__('This photo ('.$result->title.') has been saved.'));
+                return $this->redirect(['controller' => 'Photos', 'action' => 'edit', $result->id]);
+            }
+            else {
+                $this->Flash->error(__('This photo could not be saved. Please try again.'));
+            }
         }
         $this->set(compact('photo'));
     }
@@ -72,11 +102,39 @@ class PhotosController extends AppController
             'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $Photo = $this->Photos->patchEntity($photo, $this->request->getData());
-            if ($this->Photos->save($photo)) {
-                $this->Flash->success(__('This photo ('.$photo->title.') has been saved.'));
+            $photoData = $this->request->getData();
+            // Create slug if needed
+            if (!isset($photoData['slug']) || empty($photoData['slug'])) {
+                $photoData['slug'] = strtolower(substr(Text::slug($photoData['title']), 0, 255));    
+            }
+            // Image management
+            $image = $this->request->getData('filename');
+            if ($image != null && $image->getError() != UPLOAD_ERR_NO_FILE) {
+                $imageFile = $image->getClientFilename();
+                $photoData['filename'] = $imageFile;
 
-                return $this->redirect(['action' => 'index']);
+                // Image upload
+                $fileobject = $this->request->getData('filename');
+                $uploadPath = 'photos/originals/';
+                $destination = $uploadPath.$imageFile;
+                $fileobject->moveTo($destination);
+
+                // Image resizes
+                $manager = new ImageManager(array('driver' => 'imagick'));
+                $displayImage = $manager->make($destination)->widen(1080, function ($constraint) {
+                    $constraint->upsize();
+                });
+                $displayImage->save('photos/'.$imageFile);
+                $tnailImage = $manager->make($destination)->widen(120);
+                $tnailImage->save('photos/tnails/'.$imageFile);
+            }
+            else {
+                $eventData['image'] = "";
+            }
+            $photo = $this->Photos->patchEntity($photo, $photoData);
+            if ($result = $this->Photos->save($photo)) {
+                $this->Flash->success(__('This photo ('.$photo->title.') has been saved.'));
+                return $this->redirect(['controller' => 'Photos', 'action' => 'edit', $result->id]);
             }
             $this->Flash->error(__('This photo ('.$photo->title.') could not be saved. Please, try again.'));
         }

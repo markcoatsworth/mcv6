@@ -9,31 +9,31 @@
     <?= $this->Html->link(__('Back to Photos List'), ['action' => 'index'], ['class' => 'button']) ?>
     <table>
         <tr>
-            <th><?= __('Photo') ?></th>
+            <td class="label"><label>Photo</label></td>
             <td><?= h($photo->title) ?></td>
         </tr>
         <tr>
-            <th><?= __('Image') ?></th>
-            <td><?= h($photo->filename) ?></td>
+            <td class="label"><label>Image</label></td>
+            <td><?php echo $this->Html->image('/photos/'.$photo->filename); ?></td>
         </tr>
         <tr>
-            <th><?= __('Description') ?></th>
+            <td class="label"><label>Description</label></td>
             <td><?= h($photo->description) ?></td>
         </tr>
         <tr>
-            <th><?= __('Slug') ?></th>
+            <td class="label"><label>Slug</label></td>
             <td><?= h($photo->slug) ?></td>
         </tr>
         <tr>
-            <th><?= __('Gallery') ?></th>
+            <td class="label"><label>Gallery</label></td>
             <td><?= h($photo->gallery_id) ?></td>
         </tr>
         <tr>
-            <th><?= __('Gallery Order') ?></th>
+            <td class="label"><label>Gallery order</label></td>
             <td><?= h($photo->gallery_order) ?></td>
         </tr>
         <tr>
-            <th><?= __('Published') ?></th>
+            <td class="label"><label>Published</label></td>
             <td><?= h($photo->published) ?></td>
         </tr>
     </table>

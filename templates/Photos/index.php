@@ -15,7 +15,7 @@
             <tr>
                 <td><?= h($photo->title) ?></td>
                 <td><?= h($photo->description) ?></td>
-                <td><?= h($photo->filename) ?></td>
+                <td><?php echo $this->Html->image('/photos/tnails/'.$photo->filename); ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $photo->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $photo->id]) ?>
