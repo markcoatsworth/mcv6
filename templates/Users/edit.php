@@ -5,15 +5,32 @@
  */
 ?>
 <div class="users form">
+    <h2>Edit User: <?= $user->username ?></h2>
+    <?= $this->Html->link(__('Back to Users List'), ['action' => 'index'], ['class' => 'button back']) ?>
     <?= $this->Form->create($user) ?>
     <fieldset>
-        <legend><?= __('Edit User') ?></legend>
-        <?php
-            echo $this->Form->control('first_name');
-            echo $this->Form->control('last_name');
-            echo $this->Form->control('email');
-            echo $this->Form->control('password');
-        ?>
+        <table class="user">
+            <tr>
+                <td><label>Username</label></td>
+                <td><?= $this->Form->control('username', ['label' => false]) ?></td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+                <td><?= $this->Form->control('password', ['type' => 'password', 'label' => false]) ?></td>
+            </tr>
+            <tr>
+                <td><label>First name</label></td>
+                <td><?= $this->Form->control('first_name', ['label' => false]) ?></td>
+            </tr>
+            <tr>
+                <td><label>Last name</label></td>
+                <td><?= $this->Form->control('last_name', ['label' => false]) ?></td>
+            </tr>
+            <tr>
+                <td><label>Email</label></td>
+                <td><?= $this->Form->control('email', ['label' => false]) ?></td>
+            </tr>
+        </table>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>

@@ -4,30 +4,28 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
-<div class="users view">
+<div class="users form">
     <h2>User: <?= $user->username ?></h2>
-    <?= $this->Html->link(__('Back to Users List'), ['action' => 'index'], ['class' => 'button']) ?>
-    <table>
-        <tr>
-            <th><?= __('Email') ?></th>
-            <td><?= h($user->email) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Password') ?></th>
-            <td><?= h($user->password) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Id') ?></th>
-            <td><?= $this->Number->format($user->id) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Created') ?></th>
-            <td><?= h($user->created) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Modified') ?></th>
-            <td><?= h($user->modified) ?></td>
-        </tr>
-    </table>
+    <?= $this->Html->link(__('Back to Users List'), ['action' => 'index'], ['class' => 'button back']) ?>
+    <fieldset>
+        <table class="user">
+            <tr>
+                <td><label>Username</label></td>
+                <td><?= h($user->username) ?></td>
+            </tr>
+            <tr>
+                <td><label>Email</label></td>
+                <td><?= h($user->email) ?></td>
+            </tr>
+            <tr>
+                <td><label>First name</label></td>
+                <td><?= h($user->first_name) ?></td>
+            </tr>
+            <tr>
+                <td><label>Last name</label></td>
+                <td><?= h($user->last_name) ?></td>
+            </tr>
+        </table>
+    </fieldset>
 </div>
 

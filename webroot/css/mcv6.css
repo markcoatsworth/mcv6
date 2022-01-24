@@ -1,3 +1,17 @@
+/*** COLORS ***/
+
+body {
+    background-color: #fff;
+}
+
+nav#side-nav {
+    background-color: #f0f0f0;
+}
+
+div.form {
+    background-color: #f0f0f0;
+}
+
 /*** TYPOGRAPHY ***/
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,13 +35,27 @@ h2 {
     font-weight: 700;
     margin: 0 0 20px 0;
     padding: 0;
-    text-transform: uppercase;
+}
+label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+}
+
+
+/*** MAIN CONTENT ***/
+
+main {
+    
+}
+
+main div.container {
+    margin: 20px 0 0 300px;
+    max-width: 70%;
 }
 
 /*** NAVIGATION ***/
 
 nav#side-nav {
-    background-color: #f0f0f0;
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
     font-weight: 400;
@@ -53,13 +81,32 @@ nav#side-nav ul li a {
     text-decoration: none;
 }
 
-/*** MAIN CONTENT ***/
+/*** FORMS ***/
 
-main {
-    
+div.form {
+    box-shadow: 0 7px 14px 0 rgba(60, 66, 87, 0.2),
+        0 3px 6px 0 rgba(0, 0, 0, 0.14);
+    padding: 2rem;
 }
 
-main div.container {
-    margin: 20px 0 0 300px;
+a.button.back {
+    background-color: #666;
+}
+
+fieldset {
+    margin: 1rem 0;
+}
+
+input, label, select, textarea {
+    margin: 0;
+}
+
+th {
+    padding: 1rem 0;
+}
+
+td {
+    border: 0;
+    padding: 1rem 0;
 }
 

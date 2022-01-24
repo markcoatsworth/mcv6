@@ -62,6 +62,7 @@ return static function (RouteBuilder $routes) {
         $builder->connect('/admin', ['controller' => 'Pages', 'action' => 'admin']);
         $builder->connect('/admin/galleries', ['controller' => 'Galleries', 'action' => 'index']);
         $builder->connect('/admin/photos', ['controller' => 'Photos', 'action' => 'index']);
+        $builder->connect('/admin/photos/add', ['controller' => 'Photos', 'action' => 'add']);
         $builder->connect('/admin/users', ['controller' => 'Users', 'action' => 'index']);
 
         /*
