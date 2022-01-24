@@ -11,11 +11,11 @@
     <fieldset>
         <table class="gallery">
             <tr>
-                <td><label>Name</label></td>
+                <td class="label"><label>Name</label></td>
                 <td><?= $this->Form->control('name', ['label' => false]) ?></td>
             </tr>
             <tr>
-                <td><label>Slug</label></td>
+                <td class="label"><label>Slug</label></td>
                 <td><?= $this->Form->control('slug', ['label' => false]) ?></td>
             </tr>
         </table>

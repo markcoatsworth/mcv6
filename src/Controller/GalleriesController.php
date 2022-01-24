@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use Cake\Utility\Text;
+
 /**
  * Galleries Controller
  *
@@ -52,7 +54,13 @@ class GalleriesController extends AppController
     {
         $gallery = $this->Galleries->newEmptyEntity();
         if ($this->request->is('post')) {
-            $gallery = $this->Galleries->patchEntity($gallery, $this->request->getData());
+            $galleryData = $this->request->getData();
+            // Create slug if needed
+            if (!isset($galleryData['slug']) || empty($galleryData['slug'])) {
+                $galleryData['slug'] = strtolower(substr(Text::slug($galleryData['name']), 0, 255));
+            }
+
+            $gallery = $this->Galleries->patchEntity($gallery, $galleryData);
             if ($this->Galleries->save($gallery)) {
                 $this->Flash->success(__('The gallery '.$gallery->name.' has been saved.'));
 

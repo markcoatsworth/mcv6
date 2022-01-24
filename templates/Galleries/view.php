@@ -9,11 +9,11 @@
     <?= $this->Html->link(__('Back to Galleries List'), ['action' => 'index'], ['class' => 'button back']) ?>
     <table>
         <tr>
-            <td><label>Name</label></td>
+            <td class="label"><label>Name</label></td>
             <td><?= h($gallery->name) ?></td>
         </tr>
         <tr>
-            <td><label>Slug</label></td>
+            <td class="label"><label>Slug</label></td>
             <td><?= h($gallery->slug) ?></td>
         </tr>
     </table>

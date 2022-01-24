@@ -11,23 +11,23 @@
     <fieldset>
         <table class="user">
             <tr>
-                <td><label>Username</label></td>
+                <td class="label"><label>Username</label></td>
                 <td><?= $this->Form->control('username', ['label' => false]) ?></td>
             </tr>
             <tr>
-                <td><label>Password</label></td>
+                <td class="label"><label>Password</label></td>
                 <td><?= $this->Form->control('password', ['type' => 'password', 'label' => false]) ?></td>
             </tr>
             <tr>
-                <td><label>First name</label></td>
+                <td class="label"><label>First name</label></td>
                 <td><?= $this->Form->control('first_name', ['label' => false]) ?></td>
             </tr>
             <tr>
-                <td><label>Last name</label></td>
+                <td class="label"><label>Last name</label></td>
                 <td><?= $this->Form->control('last_name', ['label' => false]) ?></td>
             </tr>
             <tr>
-                <td><label>Email</label></td>
+                <td class="label"><label>Email</label></td>
                 <td><?= $this->Form->control('email', ['label' => false]) ?></td>
             </tr>
         </table>

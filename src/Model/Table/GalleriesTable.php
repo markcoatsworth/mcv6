@@ -40,12 +40,9 @@ class GalleriesTable extends Table
     public function initialize(array $config): void
     {
         parent::initialize($config);
-
         $this->setTable('galleries');
-        $this->setDisplayField('id');
+        $this->setDisplayField('slug');
         $this->setPrimaryKey('id');
-
-        $this->addBehavior('Timestamp');
     }
 
     /**
@@ -57,16 +54,8 @@ class GalleriesTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-            ->integer('id')
-            ->allowEmptyString('id', null, 'create');
-
-        $validator
             ->requirePresence('name', 'create')
             ->notEmptyString('name');
-
-        $validator
-            ->requirePresence('slug', 'create')
-            ->notEmptyString('slug');
 
         return $validator;
     }

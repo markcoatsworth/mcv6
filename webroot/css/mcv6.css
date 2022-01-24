@@ -12,6 +12,10 @@ div.form {
     background-color: #f0f0f0;
 }
 
+div.form img {
+    margin: 10px 0;
+}
+
 /*** TYPOGRAPHY ***/
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,8 +41,10 @@ h2 {
     padding: 0;
 }
 label {
+    color: #000;
     font-family: 'Raleway', sans-serif;
-    font-weight: 100;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 
@@ -97,7 +103,7 @@ fieldset {
     margin: 1rem 0;
 }
 
-input, label, select, textarea {
+input, label, select, textarea, .input.checkbox {
     margin: 0;
 }
 
@@ -108,5 +114,9 @@ th {
 td {
     border: 0;
     padding: 1rem 0;
+}
+
+td.label {
+    width: 200px;
 }
 

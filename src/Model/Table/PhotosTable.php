@@ -42,7 +42,7 @@ class PhotosTable extends Table
         parent::initialize($config);
 
         $this->setTable('photos');
-        $this->setDisplayField('id');
+        $this->setDisplayField('slug');
         $this->setPrimaryKey('id');
     }
 
@@ -54,17 +54,10 @@ class PhotosTable extends Table
      */
     public function validationDefault(Validator $validator): Validator
     {
-        $validator
-            ->integer('id')
-            ->allowEmptyString('id', null, 'create');
 
         $validator
             ->requirePresence('title', 'create')
             ->notEmptyString('title');
-
-        $validator
-            ->requirePresence('slug', 'create')
-            ->notEmptyString('slug');
 
         $validator
             ->requirePresence('filename', 'create')
