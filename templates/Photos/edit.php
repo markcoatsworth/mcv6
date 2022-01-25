@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <td class="label"><label>Gallery</label></td>
-                <td><?= $this->Form->control('gallery_id', ['label' => false]) ?></td>
+                <td><?= $this->Form->control('gallery_id', ['options' => $galleries, 'label' => false]) ?></td>
             </tr>
             <tr>
                 <td class="label"><label>Gallery Order</label></td>

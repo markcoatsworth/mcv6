@@ -3,7 +3,7 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\User $user
  */
-?>
+ ?>
 <div class="photos form">
     <h2>Photo: <?= $photo->title ?></h2>
     <?= $this->Html->link(__('Back to Photos List'), ['action' => 'index'], ['class' => 'button']) ?>
@@ -26,7 +26,7 @@
         </tr>
         <tr>
             <td class="label"><label>Gallery</label></td>
-            <td><?= h($photo->gallery_id) ?></td>
+            <td><?= h($photo->gallery->name) ?></td>
         </tr>
         <tr>
             <td class="label"><label>Gallery order</label></td>

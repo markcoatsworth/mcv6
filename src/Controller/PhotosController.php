@@ -35,7 +35,9 @@ class PhotosController extends AppController
      */
     public function view($id = null)
     {
-        $photo = $this->Photos->get($id);
+        $photo = $this->Photos->get($id, [
+            'contain' => ['Galleries']
+        ]);
         $this->set(compact('photo'));
     }
 
@@ -47,6 +49,10 @@ class PhotosController extends AppController
     public function add()
     {
         $photo = $this->Photos->newEmptyEntity();
+        $galleries = $this->Photos->Galleries->find('list', [
+            'keyField' => 'id',
+            'valueField' => 'name'
+        ]);
         if ($this->request->is('post')) {
             $photoData = $this->request->getData();
             // Create slug if needed
@@ -86,7 +92,7 @@ class PhotosController extends AppController
                 $this->Flash->error(__('This photo could not be saved. Please try again.'));
             }
         }
-        $this->set(compact('photo'));
+        $this->set(compact('photo', 'galleries'));
     }
 
     /**
@@ -98,8 +104,10 @@ class PhotosController extends AppController
      */
     public function edit($id = null)
     {
-        $photo = $this->Photos->get($id, [
-            'contain' => [],
+        $photo = $this->Photos->get($id);
+        $galleries = $this->Photos->Galleries->find('list', [
+            'keyField' => 'id',
+            'valueField' => 'name'
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $photoData = $this->request->getData();
@@ -107,9 +115,9 @@ class PhotosController extends AppController
             if (!isset($photoData['slug']) || empty($photoData['slug'])) {
                 $photoData['slug'] = strtolower(substr(Text::slug($photoData['title']), 0, 255));    
             }
-            // Image management
+            // Was this a newly uploaded image? If so, complete the upload and image management.
             $image = $this->request->getData('filename');
-            if ($image != null && $image->getError() != UPLOAD_ERR_NO_FILE) {
+            if (empty($photo['filename']) && $image != null && $image->getError() != UPLOAD_ERR_NO_FILE) {
                 $imageFile = $image->getClientFilename();
                 $photoData['filename'] = $imageFile;
 
@@ -128,8 +136,9 @@ class PhotosController extends AppController
                 $tnailImage = $manager->make($destination)->widen(120);
                 $tnailImage->save('photos/tnails/'.$imageFile);
             }
+            // If not a newly-uplaoded image, just keep whatever was there before
             else {
-                $eventData['image'] = "";
+                $photoData['filename'] = $photo['filename'];
             }
             $photo = $this->Photos->patchEntity($photo, $photoData);
             if ($result = $this->Photos->save($photo)) {
@@ -138,7 +147,7 @@ class PhotosController extends AppController
             }
             $this->Flash->error(__('This photo ('.$photo->title.') could not be saved. Please, try again.'));
         }
-        $this->set(compact('photo'));
+        $this->set(compact('photo', 'galleries'));
     }
 
     /**

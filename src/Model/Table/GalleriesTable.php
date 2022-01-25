@@ -40,6 +40,11 @@ class GalleriesTable extends Table
     public function initialize(array $config): void
     {
         parent::initialize($config);
+
+        $this->hasMany('Photos', [
+           'foreignKey' => 'gallery_id',
+        ]);
+
         $this->setTable('galleries');
         $this->setDisplayField('slug');
         $this->setPrimaryKey('id');

@@ -41,6 +41,10 @@ class PhotosTable extends Table
     {
         parent::initialize($config);
 
+        $this->belongsTo('Galleries', [
+            'foreignKey' => 'gallery_id'
+        ]);
+
         $this->setTable('photos');
         $this->setDisplayField('slug');
         $this->setPrimaryKey('id');
@@ -56,12 +60,7 @@ class PhotosTable extends Table
     {
 
         $validator
-            ->requirePresence('title', 'create')
             ->notEmptyString('title');
-
-        $validator
-            ->requirePresence('filename', 'create')
-            ->notEmptyString('filename');
 
         return $validator;
     }
