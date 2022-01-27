@@ -107,6 +107,10 @@ input, label, select, textarea, .input.checkbox {
     margin: 0;
 }
 
+table.index td {
+    border-bottom: 1px;
+}
+
 th {
     padding: 1rem 0;
 }

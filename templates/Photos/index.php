@@ -1,5 +1,5 @@
 <div class="photos form">
-    <h2><?= __('Photos') ?></h2>
+    <h2><?= __('Photo Manager') ?></h2>
     <?= $this->Html->link(__('New Photo'), ['action' => 'add'], ['class' => 'button']) ?>
     <table class="index">
         <thead>

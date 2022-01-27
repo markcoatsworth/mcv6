@@ -1,5 +1,5 @@
 <div class="galleries form">
-    <h2><?= __('Galleries') ?></h2>
+    <h2><?= __('Gallery Manager') ?></h2>
     <?= $this->Html->link(__('New Gallery'), ['action' => 'add'], ['class' => 'button']) ?>
     <table class="index">
         <thead>

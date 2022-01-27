@@ -59,11 +59,13 @@ return static function (RouteBuilder $routes) {
         /*
          * Admin pages
          */
-        $builder->connect('/admin', ['controller' => 'Pages', 'action' => 'admin']);
+        $builder->connect('/admin', ['controller' => 'Photos', 'action' => 'index']);
         $builder->connect('/admin/galleries', ['controller' => 'Galleries', 'action' => 'index']);
+        $builder->connect('/admin/galleries/{action}/*', ['controller' => 'Galleries']);
         $builder->connect('/admin/photos', ['controller' => 'Photos', 'action' => 'index']);
-        $builder->connect('/admin/photos/add', ['controller' => 'Photos', 'action' => 'add']);
+        $builder->connect('/admin/photos/{action}/*', ['controller' => 'Photos']);
         $builder->connect('/admin/users', ['controller' => 'Users', 'action' => 'index']);
+        $builder->connect('/admin/users/{action}/*', ['controller' => 'Users']);
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.

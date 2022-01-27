@@ -1,5 +1,5 @@
 <div class="users form">
-    <h2><?= __('Users') ?></h2>
+    <h2><?= __('User Manager') ?></h2>
     <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'button']) ?>
     <table class="index">
         <thead>
