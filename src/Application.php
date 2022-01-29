@@ -28,10 +28,12 @@ use Cake\ORM\Locator\TableLocator;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
 
+/*
 use Authentication\AuthenticationService;
 use Authentication\AuthenticationServiceInterface;
 use Authentication\AuthenticationServiceProviderInterface;
 use Authentication\Middleware\AuthenticationMiddleware;
+*/
 use Cake\Routing\Router;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -41,7 +43,7 @@ use Psr\Http\Message\ServerRequestInterface;
  * This defines the bootstrapping logic and middleware layers you
  * want to use in your application.
  */
-class Application extends BaseApplication implements AuthenticationServiceProviderInterface
+class Application extends BaseApplication //implements AuthenticationServiceProviderInterface
 {
     /**
      * Load all the application configuration and bootstrap logic.
@@ -72,7 +74,6 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
 
         // Load more plugins here
         $this->addPlugin('DebugKit');
-
         Configure::write('DebugKit.forceEnable', true);
     }
 
@@ -103,7 +104,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
             ->add(new RoutingMiddleware($this))
 
             // add Authentication after RoutingMiddleware
-            ->add(new AuthenticationMiddleware($this))
+            //->add(new AuthenticationMiddleware($this))
 
             // Parse various types of encoded request bodies so that they are
             // available as array through $request->getData()
@@ -147,6 +148,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         // Load more plugins here
     }
 
+    /*
      public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
     {
         $authenticationService = new AuthenticationService([
@@ -175,4 +177,5 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
 
         return $authenticationService;
     }
+    */
 }
