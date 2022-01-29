@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c74076395b5d83874db4967c0a6af4f",
+    "content-hash": "205e8da2173f32072b4901586368eeca",
     "packages": [
         {
             "name": "cakephp/authentication",
@@ -2737,16 +2737,16 @@
         },
         {
             "name": "cakephp/debug_kit",
-            "version": "4.7.0",
+            "version": "4.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/debug_kit.git",
-                "reference": "6de421f1ed67bbf2b47985b9c81be2940a7eba87"
+                "reference": "ce564bacca4ebf471c34a886741672b54328b382"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/6de421f1ed67bbf2b47985b9c81be2940a7eba87",
-                "reference": "6de421f1ed67bbf2b47985b9c81be2940a7eba87",
+                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/ce564bacca4ebf471c34a886741672b54328b382",
+                "reference": "ce564bacca4ebf471c34a886741672b54328b382",
                 "shasum": ""
             },
             "require": {
@@ -2799,7 +2799,7 @@
                 "issues": "https://github.com/cakephp/debug_kit/issues",
                 "source": "https://github.com/cakephp/debug_kit"
             },
-            "time": "2021-12-18T04:44:00+00:00"
+            "time": "2022-01-20T02:44:41+00:00"
         },
         {
             "name": "cakephp/twig-view",

@@ -71,6 +71,9 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         }
 
         // Load more plugins here
+        $this->addPlugin('DebugKit');
+
+        Configure::write('DebugKit.forceEnable', true);
     }
 
     /**
