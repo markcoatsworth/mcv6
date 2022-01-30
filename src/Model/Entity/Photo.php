@@ -31,6 +31,6 @@ class Photo extends Entity
         'filename' => true,
         'published' => true,
         'gallery_id' => true,
-        'gallery_order' => true,
+        'gallery_order' => true
     ];
 }

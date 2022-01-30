@@ -16,6 +16,23 @@
             <td class="label"><label>Slug</label></td>
             <td><?= h($gallery->slug) ?></td>
         </tr>
+        <tr>
+            <td class="label"><label>Photos</label></td>
+            <td>
+                <ul class="photos">
+                    <?php foreach ($gallery->photos as $photo): ?>
+                        <li>
+                            <table>
+                                <tr>
+                                    <td class="tnail"><?= $this->Html->image('/photos/tnails/'.$photo->filename); ?></td>
+                                    <td class="title"><?= $photo->title ?></td>
+                                </tr>
+                            </table>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </td>
+        </tr>
     </table>
 </div>
 

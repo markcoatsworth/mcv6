@@ -46,7 +46,7 @@ class PhotosTable extends Table
         ]);
 
         $this->setTable('photos');
-        $this->setDisplayField('slug');
+        $this->setDisplayField('title');
         $this->setPrimaryKey('id');
     }
 

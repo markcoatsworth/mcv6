@@ -6,6 +6,7 @@
             <tr>
                 <th>Name</th>
                 <th>Slug</th>
+                <th># Photos</th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -14,6 +15,7 @@
             <tr>
                 <td><?= h($gallery->name) ?></td>
                 <td><?= h($gallery->slug) ?></td>
+                <td><?= count($gallery->photos) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $gallery->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $gallery->id]) ?>

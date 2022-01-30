@@ -28,8 +28,11 @@ class GalleriesController extends AppController
      */
     public function index()
     {
-        $galleries = $this->Galleries->find('all');
-        $this->set(compact('galleries'));
+        $galleries = $this->Galleries->find('all', [
+            'contain' => ['Photos']
+        ]);
+        $photos = $this->Galleries->Photos->find('list');
+        $this->set(compact('galleries', 'photos'));
     }
 
     /**
@@ -41,8 +44,11 @@ class GalleriesController extends AppController
      */
     public function view($id = null)
     {
-        $gallery = $this->Galleries->get($id);
-        $this->set(compact('gallery'));
+        $gallery = $this->Galleries->get($id, [
+            'contain' => ['Photos']
+        ]);
+        $photos = $this->Galleries->Photos->find('list');
+        $this->set(compact('gallery', 'photos'));
     }
 
     /**
@@ -81,18 +87,22 @@ class GalleriesController extends AppController
     public function edit($id = null)
     {
         $gallery = $this->Galleries->get($id, [
-            'contain' => [],
+            'contain' => ['Photos'],
         ]);
+        $photos = $this->Galleries->Photos->find('list');
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $Gallery = $this->Galleries->patchEntity($gallery, $this->request->getData());
-            if ($this->Galleries->save($gallery)) {
+            $galleries = $this->getTableLocator()->get('Galleries');
+            $gallery = $galleries->patchEntity($gallery, $this->request->getData(), ['associated' => ['Photos']]);
+            $gallery->setDirty('photos', true);
+            if ($galleries->save($gallery, ['associated' => ['Photos']])) {
                 $this->Flash->success(__('This gallery ('.$gallery->name.') has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('This gallery ('.$gallery->name.') could not be saved. Please, try again.'));
+            else {
+                $this->Flash->error(__('This gallery ('.$gallery->name.') could not be saved. Please, try again.'));
+            }
         }
-        $this->set(compact('gallery'));
+        $this->set(compact('gallery', 'photos'));
     }
 
     /**

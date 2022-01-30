@@ -46,7 +46,7 @@ class GalleriesTable extends Table
         ]);
 
         $this->setTable('galleries');
-        $this->setDisplayField('slug');
+        $this->setDisplayField('name');
         $this->setPrimaryKey('id');
     }
 
