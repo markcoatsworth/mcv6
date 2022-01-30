@@ -124,3 +124,40 @@ td.label {
     width: 200px;
 }
 
+ul.photos {
+    list-style-type: none;
+}
+
+ul.photos li {
+    background-color: #f6f6f6;
+    border: 1px solid #ccc;
+}
+
+ul.photos li table {
+    margin: 10px;
+}
+
+ul.photos li table td {
+    line-height: 0;
+    padding: 0;
+}
+
+ul.photos li table td.tnail {
+    width: 130px;
+}
+
+ul.photos li table td.tnail img {
+    margin: 0;
+}
+
+ul.sortable {
+    cursor: move;
+}
+
+/*** UTILITY ***/
+
+.clear {
+    clear: both;
+    float: none;
+    height: 0;
+}

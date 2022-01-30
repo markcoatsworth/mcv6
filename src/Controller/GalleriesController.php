@@ -47,7 +47,9 @@ class GalleriesController extends AppController
         $gallery = $this->Galleries->get($id, [
             'contain' => ['Photos']
         ]);
-        $photos = $this->Galleries->Photos->find('list');
+        $photos = $this->Galleries->Photos->find('list', [
+            'order' => ['Photos.gallery_order' => 'ASC']
+        ]);
         $this->set(compact('gallery', 'photos'));
     }
 
@@ -87,12 +89,15 @@ class GalleriesController extends AppController
     public function edit($id = null)
     {
         $gallery = $this->Galleries->get($id, [
-            'contain' => ['Photos'],
+            'contain' => ['Photos' => [
+                'sort' => ['Photos.gallery_order' => 'ASC']
+            ]],
         ]);
-        $photos = $this->Galleries->Photos->find('list');
         if ($this->request->is(['patch', 'post', 'put'])) {
             $galleries = $this->getTableLocator()->get('Galleries');
-            $gallery = $galleries->patchEntity($gallery, $this->request->getData(), ['associated' => ['Photos']]);
+            $gallery = $galleries->patchEntity($gallery, $this->request->getData(), [
+                'associated' => ['Photos']
+            ]);
             $gallery->setDirty('photos', true);
             if ($galleries->save($gallery, ['associated' => ['Photos']])) {
                 $this->Flash->success(__('This gallery ('.$gallery->name.') has been saved.'));
@@ -102,7 +107,7 @@ class GalleriesController extends AppController
                 $this->Flash->error(__('This gallery ('.$gallery->name.') could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('gallery', 'photos'));
+        $this->set(compact('gallery'));
     }
 
     /**

@@ -21,11 +21,11 @@
             <tr>
                 <td class="label"><label>Photos</label></td>
                 <td>
-                    <ul class="photos draggable">
+                    <ul class="photos sortable">
                         <?php for ($pos = 0; $pos < count($gallery->photos); $pos++ ): ?>
-                            <li draggable="true">
-                                <?= $this->Form->control('photos.'.$pos.'.id', ['label' => false]); ?>
-                                <?= $this->Form->control('photos.'.$pos.'.gallery_order', ['label' => false]); ?>
+                            <li>
+                                <?= $this->Form->control('photos.'.$pos.'.id', ['label' => false, 'class' => 'id']); ?>
+                                <?= $this->Form->control('photos.'.$pos.'.gallery_order', ['label' => false, 'class' => 'gallery_order', 'hidden' => true]); ?>
                                 <table>
                                     <tr>
                                         <td class="tnail"><?= $this->Html->image('/photos/tnails/'.$gallery->photos[$pos]->filename); ?></td>

@@ -30,6 +30,9 @@ $cakeDescription = 'Mark Coatsworth Photography';
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
     <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake', 'mcv6']) ?>
+    <?php if ($this->request->getSession()->read('Auth.username')): ?>
+        <?= $this->Html->script(['jquery-3.6.0.min', 'jquery-ui', 'mcv6']); ?>
+    <?php endif; ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
