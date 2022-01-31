@@ -60,6 +60,7 @@ $cakeDescription = 'Mark Coatsworth Photography';
                     <li><h3>Administration</h3></li>
                     <li><?= $this->Html->link('Photo Manager', ['controller' => 'photos', 'action' => 'index']); ?></li>
                     <li><?= $this->Html->link('Gallery Manager', ['controller' => 'galleries', 'action' => 'index']); ?></li>
+                    <li><?= $this->Html->link('Page Manager', ['controller' => 'pages', 'action' => 'index']); ?></li>
                     <li><?= $this->Html->link('User Manager', ['controller' => 'users', 'action' => 'index']); ?></li>
                     <li><?= $this->Html->link('Logout', ['controller' => 'users', 'action' => 'logout']); ?></li>
                 </ul>
