@@ -7,11 +7,7 @@ use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;
 
 /**
- * User Entity
- *
- * @property int $id
- * @property string $name
- * @property string $slug
+ * Gallery Entity
  */
 class Gallery extends Entity
 {

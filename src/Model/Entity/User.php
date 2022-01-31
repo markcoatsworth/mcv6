@@ -8,10 +8,6 @@ use Cake\ORM\Entity;
 
 /**
  * User Entity
- *
- * @property int $id
- * @property string $email
- * @property string $password
  */
 class User extends Entity
 {
