@@ -10,12 +10,27 @@ use Cake\Event\EventInterface;
 
 class PhotosController extends AppController
 {
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // Configure the login action to not require authentication, preventing
+        // the infinite redirect loop issue
+        $this->Authentication->addUnauthenticatedActions(['display', 'gallery']);
+    }
+
     public function gallery($name = null)
     {
         $this->set('name', $name);
+        //print("gallery::view, name=$name");
+        $photos = $this->Photos->Galleries->get( 2 /* Hardcode! */ , [
+            'contain' => ['Photos' => [
+                'sort' => ['Photos.gallery_order' => 'ASC']
+            ]],
+        ]);
+        $this->set(compact('photos'));
     }
 
-        /**
+       /**
      * Index method
      *
      * @return \Cake\Http\Response|null|void Renders view
