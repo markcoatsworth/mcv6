@@ -24,7 +24,7 @@
                         <li>
                             <table>
                                 <tr>
-                                    <td class="tnail"><?= $this->Html->image('/photos/tnails/'.$photo->filename); ?></td>
+                                    <td class="tnail"><?= $this->Html->image('/img/tnails/'.$photo->filename); ?></td>
                                     <td class="title"><?= $photo->title ?></td>
                                 </tr>
                             </table>

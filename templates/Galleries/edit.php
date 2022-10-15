@@ -28,7 +28,7 @@
                                 <?= $this->Form->control('photos.'.$pos.'.gallery_order', ['label' => false, 'class' => 'gallery_order', 'hidden' => true]); ?>
                                 <table>
                                     <tr>
-                                        <td class="tnail"><?= $this->Html->image('/photos/tnails/'.$gallery->photos[$pos]->filename); ?></td>
+                                        <td class="tnail"><?= $this->Html->image('/img/tnails/'.$gallery->photos[$pos]->filename); ?></td>
                                         <td class="title"><?= $gallery->photos[$pos]->title ?></td>
                                     </tr>
                                 </table>

@@ -10,31 +10,31 @@
     <table>
         <tr>
             <td class="label"><label>Photo</label></td>
-            <td><?= h($photo->title) ?></td>
+            <td><?= $photo->title ?></td>
         </tr>
         <tr>
             <td class="label"><label>Image</label></td>
-            <td><?php echo $this->Html->image('/photos/'.$photo->filename); ?></td>
+            <td><?php echo $this->Html->image('/img/photos/'.$photo->filename); ?></td>
         </tr>
         <tr>
             <td class="label"><label>Description</label></td>
-            <td><?= h($photo->description) ?></td>
+            <td><?= $photo->description ?></td>
         </tr>
         <tr>
             <td class="label"><label>Slug</label></td>
-            <td><?= h($photo->slug) ?></td>
+            <td><?= $photo->slug ?></td>
         </tr>
         <tr>
             <td class="label"><label>Gallery</label></td>
-            <td><?= h($photo->gallery->name) ?></td>
+            <td><?= $photo->gallery->name ?></td>
         </tr>
         <tr>
             <td class="label"><label>Gallery order</label></td>
-            <td><?= h($photo->gallery_order) ?></td>
+            <td><?= $photo->gallery_order ?></td>
         </tr>
         <tr>
             <td class="label"><label>Published</label></td>
-            <td><?= h($photo->published) ?></td>
+            <td><?= $photo->published ?></td>
         </tr>
     </table>
 </div>

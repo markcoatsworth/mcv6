@@ -18,15 +18,15 @@ class PhotosController extends AppController
         $this->Authentication->addUnauthenticatedActions(['display', 'gallery']);
     }
 
-    public function gallery($name = null)
+    public function gallery($slug = null)
     {
-        $this->set('name', $name);
-        //print("gallery::view, name=$name");
-        $photos = $this->Photos->Galleries->get( 2 /* Hardcode! */ , [
+        $gallery_id = $this->Photos->Galleries->find('all')->where(['slug =' => $slug])->first()->id;
+        $photos = $this->Photos->Galleries->get($gallery_id, [
             'contain' => ['Photos' => [
                 'sort' => ['Photos.gallery_order' => 'ASC']
             ]],
         ]);
+        $this->set(compact('slug'));
         $this->set(compact('photos'));
     }
 
@@ -82,7 +82,7 @@ class PhotosController extends AppController
 
                 // Image upload
                 $fileobject = $this->request->getData('filename');
-                $uploadPath = 'photos/originals/';
+                $uploadPath = 'img/photos/originals/';
                 $destination = $uploadPath.$imageFile;
                 $fileobject->moveTo($destination);
 
@@ -91,9 +91,9 @@ class PhotosController extends AppController
                 $displayImage = $manager->make($destination)->widen(1080, function ($constraint) {
                     $constraint->upsize();
                 });
-                $displayImage->save('photos/'.$imageFile);
+                $displayImage->save('img/photos/'.$imageFile);
                 $tnailImage = $manager->make($destination)->widen(120);
-                $tnailImage->save('photos/tnails/'.$imageFile);
+                $tnailImage->save('img/tnails/'.$imageFile);
             }
             else {
                 $eventData['image'] = "";
@@ -128,7 +128,7 @@ class PhotosController extends AppController
             $photoData = $this->request->getData();
             // Create slug if needed
             if (!isset($photoData['slug']) || empty($photoData['slug'])) {
-                $photoData['slug'] = strtolower(substr(Text::slug($photoData['title']), 0, 255));    
+                $photoData['slug'] = strtolower(substr(Text::slug($photoData['title']), 0, 255));
             }
             // Was this a newly uploaded image? If so, complete the upload and image management.
             $image = $this->request->getData('filename');
@@ -138,7 +138,7 @@ class PhotosController extends AppController
 
                 // Image upload
                 $fileobject = $this->request->getData('filename');
-                $uploadPath = 'photos/originals/';
+                $uploadPath = '/img/photos/originals/';
                 $destination = $uploadPath.$imageFile;
                 $fileobject->moveTo($destination);
 
@@ -147,9 +147,9 @@ class PhotosController extends AppController
                 $displayImage = $manager->make($destination)->widen(1080, function ($constraint) {
                     $constraint->upsize();
                 });
-                $displayImage->save('photos/'.$imageFile);
+                $displayImage->save('/img/photos/'.$imageFile);
                 $tnailImage = $manager->make($destination)->widen(120);
-                $tnailImage->save('photos/tnails/'.$imageFile);
+                $tnailImage->save('/img/tnails/'.$imageFile);
             }
             // If not a newly-uplaoded image, just keep whatever was there before
             else {
