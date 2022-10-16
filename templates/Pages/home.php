@@ -1,1 +1,1 @@
-<h2>Home page</h2>
+<img class="home" src="/v6/img/home-nunavut.jpg" />
