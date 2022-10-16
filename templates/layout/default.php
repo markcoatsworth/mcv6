@@ -52,7 +52,6 @@ $cakeDescription = 'Mark Coatsworth Photography';
             </ul>
             <ul class="pages">
                 <li><?= $this->Html->link('About', ['controller' => 'pages', 'action' => 'about']); ?></li>
-                <li><?= $this->Html->link('CV', ['controller' => 'pages', 'action' => 'cv']); ?></li>
                 <li><?= $this->Html->link('Contact', ['controller' => 'pages', 'action' => 'contact']); ?></li>
             </ul>
             <?php if ($this->request->getSession()->read('Auth.username')): ?>

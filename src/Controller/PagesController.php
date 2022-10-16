@@ -156,15 +156,8 @@ class PagesController extends AppController
     {
     }
 
-    public function cv ()
-    {
-    }
-
     public function contact ()
     {
     }
 
-    public function admin()
-    {
-    }
 }
