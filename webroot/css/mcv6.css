@@ -2,13 +2,12 @@
 
 body {
     background-color: #fff;
+    color: #000;
 }
-
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Raleway', sans-serif;
     -webkit-font-smoothing: antialiased;
 }
-
 h1 {
     font-size: 32px;
     font-weight: 700;
@@ -28,41 +27,63 @@ h2 {
     padding: 0;
     text-transform: uppercase;
 }
+h3 {
+    color: #666;
+    font-size: 24px;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
 label {
     color: #000;
     font-family: 'Raleway', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
 }
-
-nav#side-nav {
-    background-color: #f0f0f0;
+a {
+    color: #6c6c6c;
+    text-decoration: none;
 }
-
-div.form {
-    background-color: #f0f0f0;
+a:hover {
+    color: #000;
+    text-decoration: none;
 }
-
-div.form img {
-    margin: 10px 0;
+p {
+    line-height: 22px;
+    margin: 0 0 15px 0;
 }
-
+ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+li {
+    margin: 0;
+}
 
 /*** MAIN CONTENT ***/
 
 main {
-    
 }
-
 main div.container {
     margin: 20px 0 0 300px;
     max-width: 70%;
+}
+ul.contact li {
+    margin: 0 0 15px 0;
+}
+ul.contact li span.title {
+    display: block;
+    font-weight: bold;
+    line-height: 22px;
+}
+ul.contact li span.description {
+    display: block;
 }
 
 
 /*** NAVIGATION ***/
 
 nav#side-nav {
+    background-color: #f0f0f0;
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
     font-weight: 400;
@@ -72,17 +93,13 @@ nav#side-nav {
     top: 20px;
     width: 270px;
 }
-
 nav#side-nav ul {
-    list-style-type: none;
     margin: 20px 0;
     padding: 0;
 }
-
 nav#side-nav ul li {
     margin: 0;
 }
-
 nav#side-nav ul li a {
     color: #6c6c6c;
     text-decoration: none;
@@ -92,36 +109,32 @@ nav#side-nav ul li a {
 /*** FORMS ***/
 
 div.form {
-    box-shadow: 0 7px 14px 0 rgba(60, 66, 87, 0.2),
-        0 3px 6px 0 rgba(0, 0, 0, 0.14);
+    background-color: #f0f0f0;
+    box-shadow: 0 7px 14px 0 rgba(60, 66, 87, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.14);
     padding: 2rem;
 }
-
+div.form img {
+    margin: 10px 0;
+}
 a.button.back {
     background-color: #666;
 }
-
 fieldset {
     margin: 1rem 0;
 }
-
 input, label, select, textarea, .input.checkbox {
     margin: 0;
 }
-
 table.index td {
     border-bottom: 1px;
 }
-
 th {
     padding: 1rem 0;
 }
-
 td {
     border: 0;
     padding: 1rem 0;
 }
-
 td.label {
     width: 200px;
 }
@@ -129,14 +142,9 @@ td.label {
 
 /*** PHOTO GALLERIES ***/
 
-div.gallery ul.photos {
-    list-style-type: none;
-}
-
 div.gallery ul.photos li {
     margin-bottom: 100px;
 }
-
 div.gallery ul.photos li p.title {
     color: #000;
 }
@@ -144,32 +152,23 @@ div.gallery ul.photos li p.title {
 
 /*** ADMIN ***/
 
-table.gallery ul.photos {
-    list-style-type: none;
-}
-
 table.gallery ul.photos li {
     background-color: #f6f6f6;
     border: 1px solid #ccc;
 }
-
 table.gallery ul.photos li table {
     margin: 10px;
 }
-
 table.gallery ul.photos li table td {
     line-height: 0;
     padding: 0;
 }
-
 table.gallery ul.photos li table td.tnail {
     width: 130px;
 }
-
 table.gallery ul.photos li table td.tnail img {
     margin: 0;
 }
-
 table.gallery ul.sortable {
     cursor: move;
 }
