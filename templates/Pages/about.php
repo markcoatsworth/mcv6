@@ -12,7 +12,7 @@
 
 <h3>CV</h3>
 
-<h3>Solo Exhibitions</h3>
+<h4>Solo Exhibitions</h4>
 <ul>
     <li>2018, Midwestern Winters, PhotoMidwest Gallery, 700 Rayovac Dr, Madison WI</li>
     <li>2009, Abandon: Baffin Island, Lens Factory, 1040 Queen St. W., Toronto ON</li>
@@ -21,7 +21,7 @@
     <li>2006, Arctic: Black & White, C'est What, 67 Front St. E., Toronto ON</li>
 </ul>
 
-<h3>Group Exhibitions</h3>
+<h4>Group Exhibitions</h4>
 <ul>
     <li>2017, Royal Photographic Society International Exhibition 160 (shortlist)</li>
     <li>2016, SE Center for Photography, The Abandoned Landscape, Greenville SC</li> 
@@ -31,7 +31,7 @@
     <li>2007, Praxis Gallery, 1614 Queen St. W., Toronto ON</li>
 </ul>
 
-<h3>Music Record Artwork</h3>
+<h4>Music Record Artwork</h4>
 <ul>
     <li>Opeth - Lamentations, Live at Shepherd's Bush Empire (2016)</li>
     <li>Trent Severn - Trillium (2015)</li>
@@ -56,7 +56,7 @@
     <li>Destruction - Alive Devastation (2003)</li>
 </ul>
 
-<h3>Press & Interviews</h3>
+<h4>Press & Interviews</h4>
 <ul>
     <li>CBC Radio Canada - Interview, Y a pas deux matins pareils - December 2009</li>
     <li><a href="http://markcoatsworth.com/v5/pdf/NOW-Art-Story-2008-Mark-Coatsworth.pdf" target="_blank">NOW Magazine - Art Story - May 2008</a></li>
