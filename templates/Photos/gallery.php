@@ -6,6 +6,7 @@
         <li>
             <img src="/v6/img/photos/<?= $photo->filename ?>" />
             <p class="title"><?= $photo->title ?></p>
+            <p class="description"><?= $photo->description ?></p>
         </li>
     <?php endforeach; ?>
     </ul>

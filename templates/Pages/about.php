@@ -6,6 +6,8 @@
 
 <p>In 2014 I moved to Wisconsin, USA where I'm a Computer Science graduate student at UW Madison. This is the ideal setting to indulge in my fascination with the American Rust Belt and provide amazing photo opportunities for the years ahead.</p>
 
+<img class="portrait" src="/v6/img/mark-portrait.jpg" />
+
 <h3>Artist Statement</h3>
 
 <p>Photography should be informative but also needs to look good. I use pictures to tell stories from the past and ask questions about the future. I want my photos to be uncomfortable, analytical, and beautiful. I use long exposures and pinhole lenses to fudge optics and create a sense of surrealism. My ongoing work, "Abandon", examines collapse in human societies, comparing downfalls of past societies with ongoing problems in the present.</p>

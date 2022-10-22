@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 32px;
     font-weight: 700;
-    line-height: 28px;
+    line-height: 32px;
     margin: 0;
     padding: 0;
     text-transform: uppercase;
@@ -21,7 +21,7 @@ h1 a {
 }
 h2 {
     color: #000;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     margin: 0 0 20px 0;
     padding: 0;
@@ -78,6 +78,9 @@ ul.contact li span.title {
 ul.contact li span.description {
     display: block;
 }
+img.portrait {
+    margin: 30px;
+}
 
 
 /*** NAVIGATION ***/
@@ -91,7 +94,7 @@ nav#side-nav {
     padding: 70px 20px;
     position: fixed;
     top: 20px;
-    width: 270px;
+    width: 280px;
 }
 nav#side-nav ul {
     margin: 20px 0;
@@ -103,6 +106,10 @@ nav#side-nav ul li {
 nav#side-nav ul li a {
     color: #6c6c6c;
     text-decoration: none;
+}
+nav#side-nav ul li a:hover {
+    color: #000;
+    font-weight: 700;
 }
 
 
@@ -145,8 +152,17 @@ td.label {
 div.gallery ul.photos li {
     margin-bottom: 100px;
 }
+div.gallery ul.photos li p {
+    margin: 0;
+}
 div.gallery ul.photos li p.title {
     color: #000;
+}
+div.gallery ul.photos li p.description {
+    color: #666;
+}
+div.gallery ul.photos img {
+    max-height: 920px;
 }
 
 

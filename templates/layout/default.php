@@ -55,8 +55,8 @@ $cakeDescription = 'Mark Coatsworth Photography';
                 <li><?= $this->Html->link('Contact', ['controller' => 'pages', 'action' => 'contact']); ?></li>
             </ul>
             <?php if ($this->request->getSession()->read('Auth.username')): ?>
+                <h2>Administration</h2>
                 <ul class="admin">
-                    <li><h3>Administration</h3></li>
                     <li><?= $this->Html->link('Photo Manager', ['controller' => 'photos', 'action' => 'index']); ?></li>
                     <li><?= $this->Html->link('Gallery Manager', ['controller' => 'galleries', 'action' => 'index']); ?></li>
                     <li><?= $this->Html->link('Page Manager', ['controller' => 'pages', 'action' => 'index']); ?></li>
