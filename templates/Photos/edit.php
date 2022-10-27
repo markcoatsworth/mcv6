@@ -22,7 +22,7 @@
                 <td class="label"><label>Image</label></td>
                 <td>
                     <?= $photo->filename ?><?= $this->Form->control('filename', ['type' => 'file', 'label' => false]) ?>
-                    <?php echo $this->Html->image('/photos/'.$photo->filename); ?>
+                    <?php echo $this->Html->image('/img/photos/'.$photo->filename); ?>
                 </td>
             </tr>
             <tr>

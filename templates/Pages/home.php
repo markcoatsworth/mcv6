@@ -1,1 +1,1 @@
-<img class="home" src="/v6/img/home-nunavut.jpg" />
+<img class="home" src="/img/home-nunavut.jpg" />

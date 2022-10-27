@@ -4,7 +4,7 @@
     <ul class="photos">
     <?php foreach ($photos->photos as $photo): ?>
         <li>
-            <img src="/v6/img/photos/<?= $photo->filename ?>" />
+            <img src="/img/photos/<?= $photo->filename ?>" />
             <p class="title"><?= $photo->title ?></p>
             <p class="description"><?= $photo->description ?></p>
         </li>

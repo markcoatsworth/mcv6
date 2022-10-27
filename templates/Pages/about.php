@@ -6,7 +6,7 @@
 
 <p>In 2014 I moved to Wisconsin, USA where I'm a Computer Science graduate student at UW Madison. This is the ideal setting to indulge in my fascination with the American Rust Belt and provide amazing photo opportunities for the years ahead.</p>
 
-<img class="portrait" src="/v6/img/mark-portrait.jpg" />
+<img class="portrait" src="/img/mark-portrait.jpg" />
 
 <h3>Artist Statement</h3>
 
@@ -61,9 +61,9 @@
 <h4>Press & Interviews</h4>
 <ul>
     <li>CBC Radio Canada - Interview, Y a pas deux matins pareils - December 2009</li>
-    <li><a href="http://markcoatsworth.com/v5/pdf/NOW-Art-Story-2008-Mark-Coatsworth.pdf" target="_blank">NOW Magazine - Art Story - May 2008</a></li>
-    <li><a href="http://markcoatsworth.com/v5/pdf/Parkdale-Liberty-Villager-2008-Mark-Coatsworth.pdf" target="_blank">Parkdale-Liberty Villager - May 2008</a></li>
-    <li><a href="http://markcoatsworth.com/v5/pdf/Toronto-Star-Contact-2008-Mark-Coatsworth.pdf" target="_blank">Toronto Star, At the Galleries - April 2008</a></li>
+    <li><a href="/pdf/NOW-Art-Story-2008-Mark-Coatsworth.pdf" target="_blank">NOW Magazine - Art Story - May 2008</a></li>
+    <li><a href="/pdf/Parkdale-Liberty-Villager-2008-Mark-Coatsworth.pdf" target="_blank">Parkdale-Liberty Villager - May 2008</a></li>
+    <li><a href="/pdf/Toronto-Star-Contact-2008-Mark-Coatsworth.pdf" target="_blank">Toronto Star, At the Galleries - April 2008</a></li>
 </ul>
 
 <h3>Clients</h3>
