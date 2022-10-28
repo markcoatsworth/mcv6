@@ -37,8 +37,25 @@ class PhotosController extends AppController
      */
     public function index()
     {
-        $photos = $this->Photos->find('all');
-        $this->set(compact('photos'));
+        $photos = [];
+        $galleries = $this->Photos->Galleries->find('all');
+
+        // Get the list of photos based on selected gallery (or all photos if none selected)
+        $selectedGallery = $this->request->getQuery('gallery');
+        if (empty($selectedGallery)) {
+            $photos = $this->Photos->find('all');
+        }
+        else {
+            $selectedGalleryId = $this->Photos->Galleries->find('all')->where(['slug =' => $selectedGallery])->first()->id;
+            $photos = $this->Photos->find('all', array('conditions' => array('gallery_id' => $selectedGalleryId), 'order' => 'gallery_id ASC'));
+        }
+
+        // Add the gallery data into each photo object
+        foreach ($photos as $photo) {
+            $photo['gallery'] = $this->Photos->Galleries->get($photo['gallery_id']);
+        }
+
+        $this->set(compact('photos', 'galleries', 'selectedGallery'));
     }
 
     /**

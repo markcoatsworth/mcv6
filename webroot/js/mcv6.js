@@ -15,10 +15,23 @@ MCV6.admin = {
                 }
             });
         }
+    },
+    photo_index: {
+        init: function() {
+             $("form#gallery-filter select.gallery").change(function() {
+                if ($("form#gallery-filter select.gallery").val() == "all") {
+                    window.location.replace("/admin");
+                }
+                else {
+                    $("form#gallery-filter").submit();
+                }
+            });
+        }
     }
 }
 
 
 $(document).ready(function(){
     MCV6.admin.gallery.init();
+    MCV6.admin.photo_index.init();
 });

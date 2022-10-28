@@ -113,6 +113,66 @@ nav#side-nav ul li a:hover {
 }
 
 
+/*** PHOTO GALLERIES ***/
+
+div.gallery ul.photos li {
+    margin-bottom: 100px;
+}
+div.gallery ul.photos li p {
+    margin: 0;
+}
+div.gallery ul.photos li p.title {
+    color: #000;
+}
+div.gallery ul.photos li p.description {
+    color: #666;
+}
+div.gallery ul.photos img {
+    max-height: 920px;
+}
+
+
+/*** ADMIN ***/
+
+table.menu {
+    padding-bottom: 30px;
+}
+table.menu td.filter {
+    text-align: right;
+}
+table.menu td.filter label {
+    border-right: 20px;
+    display: inline;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin-right: 5px;
+}
+table.menu select {
+    width: 300px;
+}
+table.gallery ul.photos li {
+    background-color: #f6f6f6;
+    border: 1px solid #ccc;
+}
+table.gallery ul.photos li table {
+    margin: 10px;
+}
+table.gallery ul.photos li table td {
+    line-height: 0;
+    padding: 0;
+}
+table.gallery ul.photos li table td.tnail {
+    width: 130px;
+}
+table.gallery ul.photos li table td.tnail img {
+    margin: 0;
+}
+table.gallery ul.sortable {
+    cursor: move;
+}
+
+
 /*** FORMS ***/
 
 div.form {
@@ -136,57 +196,14 @@ table.index td {
     border-bottom: 1px;
 }
 th {
-    padding: 1rem 0;
+    padding: 1rem;
 }
 td {
     border: 0;
-    padding: 1rem 0;
+    padding: 1rem;
 }
 td.label {
     width: 200px;
-}
-
-
-/*** PHOTO GALLERIES ***/
-
-div.gallery ul.photos li {
-    margin-bottom: 100px;
-}
-div.gallery ul.photos li p {
-    margin: 0;
-}
-div.gallery ul.photos li p.title {
-    color: #000;
-}
-div.gallery ul.photos li p.description {
-    color: #666;
-}
-div.gallery ul.photos img {
-    max-height: 920px;
-}
-
-
-/*** ADMIN ***/
-
-table.gallery ul.photos li {
-    background-color: #f6f6f6;
-    border: 1px solid #ccc;
-}
-table.gallery ul.photos li table {
-    margin: 10px;
-}
-table.gallery ul.photos li table td {
-    line-height: 0;
-    padding: 0;
-}
-table.gallery ul.photos li table td.tnail {
-    width: 130px;
-}
-table.gallery ul.photos li table td.tnail img {
-    margin: 0;
-}
-table.gallery ul.sortable {
-    cursor: move;
 }
 
 
